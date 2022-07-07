@@ -2,7 +2,7 @@
 
 <img src="/img/fourier_afond.jpg" height="200">
 
-A gpu dft computation attempt using Vuda toolkit in Visual C++.
+A gpu dft computation attempt using Nvidia Cuda toolkit in Visual C++.
 
 <img src="/img/formula.png">
 
