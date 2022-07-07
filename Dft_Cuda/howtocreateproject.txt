@@ -1,0 +1,21 @@
+
+
+These are the steps I took to install CUDA into VS2010.
+
+    Create a normal project of your choice. (e.g. win32)
+
+    Right click the project and choose Build Customizations. If you have installed the tools and SDK correctly you should see a CUDA 4.0 target. (If your project becomes corrupt you may also have to replace the existing ExtensionSetting import in your .vcxproj file)
+
+<ImportGroup Label="ExtensionSettings">
+	<Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.7.props" />
+</ImportGroup>
+			
+<ImportGroup Label="ExtensionTargets">
+	<Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 11.7.targets" />
+</ImportGroup>
+
+    Your include path should already be setup, if it is not then add $(CUDA_INC_PATH) to your VC++ include directory.
+    Add cudart.lib (or static one) to your Linker additional libraries ensuring that $(CudaToolkitLibDir) is added to the paths.
+    Create a file and give it the .cu file extension. Right click the file, go to properties and select the Item Type as "Cuda C/C++".
+
+Once sthis i complete you should be able to compile Cuda in VS2010. I may have forgetten some steps, you may need to fiddle abit, I will edit this post if I recall tomorrow.
