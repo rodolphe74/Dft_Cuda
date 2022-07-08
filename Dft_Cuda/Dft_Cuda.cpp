@@ -105,9 +105,6 @@ int main(void)
     int* mu = new int[1];
     int* mv = new int[1];
 
-    std::cout << "normImage[0]:" << normImage[0] << std::endl;
-    std::cout << "normImage[1]:" << normImage[1] << std::endl;
-
     float* dev_image;
     cudaMalloc((void**)&dev_image, sz * sizeof(float));
     cudaMemcpy(dev_image, normImage, sz * sizeof(float), cudaMemcpyHostToDevice);
